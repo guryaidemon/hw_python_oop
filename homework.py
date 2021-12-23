@@ -63,8 +63,9 @@ class Training:
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
 
-        return InfoMessage(type(self).__name__, self.duration, self.get_distance(),
-                           self.get_mean_speed(), self.get_spent_calories())
+        return InfoMessage(type(self).__name__, self.duration,
+                           self.get_distance(), self.get_mean_speed(),
+                           self.get_spent_calories())
 
 
 class Running(Training):
@@ -77,7 +78,8 @@ class Running(Training):
         """Получить количество затраченных калорий."""
 
         return ((self.MULTIPLIER_RUN_CALLORIE_COEFF * self.get_mean_speed()
-                - self.SUBSTRACING_RUN_CALLORIE_COEFF) * self.weight / self.M_IN_KM
+                - self.SUBSTRACING_RUN_CALLORIE_COEFF) *
+                self.weight / self.M_IN_KM
                 * self.duration * self.MIN_IN_HOUR)
 
 
